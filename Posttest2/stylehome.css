@@ -1,0 +1,291 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+body{
+    background-size: cover;
+    background-position: center;
+}
+
+/* awal style about us */
+.content{
+    background-color: white;
+    overflow: hidden;
+
+}
+.heading h1{
+    color:#0170B9;
+    font-size: 55px;
+    text-align: center;
+    margin-top: 35px;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    margin: 65px auto;
+}
+.content-about{
+    flex:1;
+    width: 600px;
+    margin:0px;
+}
+.content-about h2{
+    font-size: 38px;
+    margin-bottom: 20px;
+    color: #333;
+}
+.content-about p{
+    font-size: 24px;
+    line-height: 1,5;
+    margin-bottom: 40px;
+    color: #666;
+}
+.content-about button{
+    display: inline-block;
+    background-color: #0170B9;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 5px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.content-about button:hover{
+    transform: scale(1.1);
+}
+.image-content-about{
+    flex: 1;
+    width: 600px;
+    margin: auto;
+}
+.image-content-about img{
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+/* akhir style about us */
+
+.section{
+    padding: 2rem 9%;
+}
+
+/* section promo */
+.heading{
+    text-align: center;
+    padding: 2rem 0;
+    padding-bottom: 3rem;
+    font-size: 2.5rem;
+    color: black;
+}
+
+/* section head dan nav */
+.header {
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.3rem 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100 ;
+}
+
+.header::before{
+    content: '';
+    top:0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgb(0, 0, 0,.1);
+    backdrop-filter:blur(5px);
+    z-index: -1;
+}
+
+.logo{
+    width: auto;
+}
+
+.navbar a{
+    font-size: 1.15rem;
+    color:white;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 2.5rem;
+    
+}
+.navbar a:hover{
+    color: gray;
+}
+
+#check{
+    display: none;
+}
+.icons{
+    position: absolute;
+    right: 5%;
+    font-size: 2.8rem;
+    color: aliceblue;
+    cursor: pointer;
+    display: none; 
+}
+
+
+/* BREAKPOINT */
+@media (max-width: 1280px){
+    .header{
+        padding: 1.3rem;
+    }
+    .section{
+        padding: 1rem;
+    }
+
+}
+
+@media (max-width:768px){
+    .icons{
+        display: inline-flex;
+    }
+
+    #check:checked~.icons #menu-icon{
+        display: none;
+    }
+    
+    .icons #close-icon{
+        display: none;
+    }
+    
+    #check:checked~.icons #close-icon{
+        display: block;
+    }
+    .navbar{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width:100%;
+        height:0;
+        background: rgba(0, 0, 0, .1);
+        backdrop-filter: blur(5px);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+        overflow: hidden;
+        transition: .3s ease;
+    }
+    
+    #check:checked~.navbar{
+        height: 17.7rem;
+    }
+
+    .navbar a{
+        display: block;
+        font-size: 1.1rem;
+        margin: 1.5rem 0;
+        text-align: center;
+        transform: translateY(-50px);
+        opacity: 0;
+        transition: .3s ease;
+    }
+
+    #check:checked~.navbar a{
+        transform: translateY(0);
+        opacity: 1;
+        transition-delay:calc(.15s *var(--i)) ;
+    }
+
+/* responsive about us */
+    .heading h1{
+        font-size: 45px;
+        margin-top: 30px;
+    }
+    .content{
+        margin: 0px;
+    }
+    .container{
+        width: 100%;
+        flex-direction: column;
+        margin: 0px;
+        padding: 0px 40px;
+    }
+    .content-about{
+        width: 100;
+        margin: 35px 0px;
+    }
+    .content-about h2{
+        font-size: 25px;
+    }
+    .content-about p{
+        font-size: 15px;
+        margin-bottom: 20px;
+    }
+    .content-about button{
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+    .image-content-about{
+        width: 100%;
+ 
+    }
+    
+}
+
+/* style untuk section */
+.home{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-position: center;
+    background-size: cover;
+    padding-top: 0rem;
+    padding-bottom: 10rem;
+}
+
+.home .content img{
+    width:100%;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+
+}
+
+/* style untuk elemen footer */
+footer {
+    background-color: rgba(0, 0, 0, 0.874) ;
+    backdrop-filter: blur(100px);
+    color: #fff; 
+    padding: 15px; 
+    text-align: center; 
+}
+footer a {
+    color:#fff;
+    text-decoration: none; 
+}
+/* style ketika di hover */
+footer a:hover {
+    color: #a21212; 
+    text-decoration: none; 
+}
+
+
+/* style artikel promo */
+
+.content-promo .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem));
+    gap: 10%;
+    align-items: center;
+}
+.content-promo .box-container .box{
+    padding: 3rem 2rem;
+    background: #fff;
+    outline-offset: -1rem;
+    text-align: center;
+}
+.content-promo .box-container .box img{
+    width: 50%;
+    pa
+}
+
+
